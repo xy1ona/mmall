@@ -37,6 +37,7 @@ var _mm = {
     },
     //获取url参数
     getUrlParam : function (name) {
+        debugger
         //happymmall.com/keyword=xxx&page=1
         var reg     = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
         var result  = window.location.search.substr(1).match(reg);
@@ -74,7 +75,7 @@ var _mm = {
     },
     //统一登录处理
     doLogin : function () {
-        window.location.href = './login.html?redirect = ' + encodeURIComponent(window.location.href);
+        window.location.href = 'view/user-login.html?redirect = ' + encodeURIComponent(window.location.href);
     },
     //跳转回主页
     goHome :function () {
