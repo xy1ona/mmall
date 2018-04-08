@@ -42,7 +42,7 @@ var page = {
         if(validateResult.status) {
             //提交
             _user.login(formDate, function (res) {
-                window.location.href = _mm.getUrlParam('redirect' || './index.html')
+                window.location.href = './index.html';
             },function (errMsg) {
                 formError.show(errMsg)
             })
