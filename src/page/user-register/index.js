@@ -19,6 +19,10 @@ var page = {
     },
     bindEvent : function () {
         var _this = this;
+        //验证username
+        $('#username').blur(function () {
+            var username = $.trim($('#username').val())
+        })
         //登录按钮的点击
         $('#submit').click(function () {
             _this.submit();
@@ -33,11 +37,11 @@ var page = {
     //提交表单
     submit : function () {
         var formDate = {
-            username : $.trim($('#username').val()),
-            password : $.trim($('#password').val())
-        },
-        //表单验证结果
-        validateResult = this.formValidate(formDate);
+                username : $.trim($('#username').val()),
+                password : $.trim($('#password').val())
+            },
+            //表单验证结果
+            validateResult = this.formValidate(formDate);
         //验证成功
         if(validateResult.status) {
             //提交
@@ -52,7 +56,7 @@ var page = {
             //错误提示
             formError.show(validateResult.msg)
         }
-            
+
     },
     formValidate : function (formDate) {
         var result = {

@@ -2,7 +2,6 @@ var _mm = require('util/mm.js');
 require('page/common/nav-simple/index.js')
 require('page/common/nav/index.js')
 require('page/common/footer/index.css')
-require('page/user-login/index.js')
 // _mm.request({
 //     url: '/product/list.do?keyword=1',
 //     success: function (res) {
