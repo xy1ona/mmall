@@ -40,11 +40,6 @@ var _mm = {
         //happymmall.com/keyword=xxx&page=1
         var reg     = new RegExp('(^|&)' + name + '=([^&]*)(&|$)');
         var result  = window.location.search.substr(1).match(reg);
-        console.log(result)
-        console.log(result == true)
-        console.log(result[2])
-        console.log(decodeURIComponent(result[2]))
-
         return result ? decodeURIComponent(result[2]) : null;
     },
     //渲染html模板
