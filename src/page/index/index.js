@@ -1,21 +1,21 @@
-var _mm = require('util/mm.js');
-require('page/common/nav-simple/index.js')
-require('page/common/nav/index.js')
-require('page/common/footer/index.css')
-// _mm.request({
-//     url: '/product/list.do?keyword=1',
-//     success: function (res) {
-//         console.log(res);
-//     },
-//     error: function (err) {
-//         console.log(err)
-//     }
-// })
-//
-// console.log(_mm.getUrlParam('test'))
-//
-// var html = '<div>{{data}}</div>';
-// var data = {
-//    data: 123
-// }
-// console.log(_mm.renderHtml(html, data))
+require('./index.css');
+require('page/common/nav/index.js');
+require('page/common/header/index.js');
+require('util/slider/index.js');
+
+var templateBanner  = require('./banner.string');
+var _mm             = require('util/mm.js');
+
+$(function () {
+    var bannerHtml = _mm.renderHtml(templateBanner);
+    $('.banner-con').html(bannerHtml);
+
+    var $slider = $('.banner').unslider({
+        dots: true
+    })
+
+    $('.banner-con .banner-arrow').click(function() {
+        var forward = $(this).hasClass('prev') ? 'prev' : 'next';
+        $slider.data('unslider')[forward]();
+    });
+})
